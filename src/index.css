@@ -2,18 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --color-purple: hsl(259, 100%, 65%);
-    --color-lightred: hsl(0, 100%, 67%);
-    --color-white: hsl(0, 0%, 100%);
-    --color-offwhite: hsl(0, 0%, 94%);
-    --color-lightgrey: hsl(0, 0%, 86%);
-    --color-smokeygrey: hsl(0, 1%, 44%);
-    --color-offblack: hsl(0, 0%, 8%);
-  }
-}
 
 body {
   background-color: hsl(0, 0%, 86%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
 }
+
+@layer utilities {
+  .border-radius-custom {
+    border-radius: 24px 24px 200px 24px;
+    width: 800px;
+  }
+
+  @media (max-width: 640px) { 
+    .border-radius-custom {
+      width: 343px;
+    }
+  }
+}
+

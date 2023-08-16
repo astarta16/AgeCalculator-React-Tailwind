@@ -1,88 +1,87 @@
 import btnImage from './assets/icon-arrow.svg';
 import { useState } from 'react';
 import './App.css';
-import './index.css';
+
 
 function App() {
   const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
 
-  const[resultDay, setResultDay] = useState('--');
-  const[resultMonth, setResultMonth] = useState('--');
-  const[resultYear, setResultYear] = useState('--');
-
-  const[emptyDay, setEmptyDay] = useState(false);
-  const[emptyMonth, setEmptyMonth] = useState(false);
-  const[emptyYear, setEmptyYear] = useState(false);
-
-
 
 
   return (
-    <div >
-      <form>
-      <label>
-      <p className="">day</p>
-        <input
-          value={day}
-          onChange={e => setDay(e.target.value)}
-          type="number"
-          placeholder='DD'
-        />
-      </label>
-      <label>
-      <p className="">Month</p>
-        <input
-          value={month}
-          onChange={e => setMonth(e.target.value)}
-          type="number"
-          placeholder='MM'
-        />
-      </label>
-      <label>
-      <p className="">Year</p>
-        <input
-          value={year}
-          onChange={e => setYear(e.target.value)}
-          type="number"
-          placeholder='YYYY'
-        />
-      </label>
-    </form>
- 
-
-
-    <div className="line w-20 h-[1.5px] m-2 bg-lightgrey"></div>
-<button className="bg-purple">
-  <img src={btnImage} alt="" />
-</button>
-<div className="resultContainer">
-          <h1 className="text-black">
-            <span className="text-red-800 text-4xl m-2">
-              {Number.isNaN(resultYear) ? "--" : resultYear}
-            </span>
-            years
-          </h1>
-          <h1 className="text-black">
-            <span className="text-purple text-4xl m-2">
-              {Number.isNaN(resultMonth) ? "--" : resultMonth}
-            </span>
-            months
-          </h1>
-          <h1 className="text-black text-2xl">
-            <span className="text-red-800 text-4xl m-2">
-              {Number.isNaN(resultDay) ? "--" : resultDay}
-            </span>
-            days
-          </h1>
+    <div className="flex justify-center items-center h-screen">
+      <div className="border-radius-custom bg-white p-4">
+        <div className="flex justify-center mb-">
+          <form className="flex flex-col md:flex-row">
+            <label className="flex flex-col items-center md:items-start mb-2 md:mb-0 md:mr-4 ">
+              <p className="text-grey">DAY</p>
+              <input
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
+                type="text"
+                placeholder="DD"
+                className="mt-1 w-40 px-6 py-3 md:w-20 text-center border transition duration-300 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-md"
+              />
+            </label>
+            <label className="flex flex-col items-center md:items-start mb-2 md:mb-0 md:mr-4">
+              <p className="text-grey">MONTH</p>
+              <input
+                value={month}
+                onChange={(e) => setMonth(e.target.value)}
+                type="text"
+                placeholder="MM"
+                className="mt-1 w-40 px-6 py-3 md:w-20 text-center border transition duration-300 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-md"
+              />
+            </label>
+            <label className="flex flex-col items-center md:items-start">
+              <p className="text-grey">YEAR</p>
+              <input
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                type="text"
+                placeholder="YYYY"
+                className="mt-1 w-40 px-6 py-3 md:w-28 text-center border transition duration-300 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-md"
+              />
+            </label>
+          </form>
+        </div>
+  
+        <div className="flex items-center mb-4">
+          <div className="flex-grow">
+            <hr className="border-smokeyGrey" />
+          </div>
+          <button className="bg-purple hover:bg-black ml-4 rounded-lg">
+            <img src={btnImage} alt="" />
+          </button>
+        </div>
+  
+        <div className="mt-4 flex justify-center">
+          <div className="flex flex-col items-center">
+            <div className="mt-4 flex items-center">
+              <span className="text-purple text-4xl font-bold leading-110">--</span>
+              <p className="ml-2 text-4xl font-bold leading-110">YEARS</p>
+            </div>
+  
+            <div className="mt-4 flex items-center">
+              <span className="text-purple text-4xl font-bold leading-110">--</span>
+              <p className="ml-2 text-4xl font-bold leading-110">MONTH</p>
+            </div>
+  
+            <div className="mt-4 flex items-center">
+              <span className="text-purple text-4xl font-bold leading-110">--</span>
+              <p className="ml-2 text-4xl font-bold leading-110">DAYS</p>
+            </div>
+          </div>
         </div>
       </div>
-    
-    
+    </div>
+  );
+  
 
-
-  )
+   
+  
 }
 
 export default App;

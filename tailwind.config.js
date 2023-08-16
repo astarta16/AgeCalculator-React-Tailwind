@@ -1,18 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{html,js}"],
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    colors: {
-      purple: "var(--color-purple)",
-      lightred: "var(--color-lightred)",
-      white: "var(--color-white)",
-      offwhite: "var(--color-offwhite)",
-      lightgrey: "var(--color-lightgrey)",
-      smokeygrey: "var(--color-smokeygrey)",
-      offblack: "var(--color-offblack)",
+    extend: {
+      colors: {
+        purple: "hsl(259, 100%, 65%)",
+        red: "hsl(0, 100%, 67%)",
+        white: "hsl(0, 0%, 100%)",
+        smokeyGrey: "hsl(0, 1%, 44%)",
+        black: "hsl(0, 0%, 8%)",
+        grey: "#716F6F",
+      },
+      
     },
-    extend: {},
   },
   plugins: [],
 }
-
