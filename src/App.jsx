@@ -89,7 +89,7 @@ function App() {
         </div>
 
         {error && (
-          <div className="text-red mt-3">
+          <div className="text-red mt-">
             {error}
           </div>
         )}
