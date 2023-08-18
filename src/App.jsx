@@ -84,7 +84,10 @@ function App() {
           </form>
         </div>
 
-        {error && <div className="text-red mt-2">{error}</div>}
+        <div className="flex justify-center items-center ">
+  {error && <div className="text-red mt-2">{error}</div>}
+</div>
+
 
         <div className="flex items-center mb-4">
           <div className="flex-grow">
