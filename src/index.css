@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* add main styles */ 
+ 
 
 body {
   background-color: hsl(0, 0%, 86%);
